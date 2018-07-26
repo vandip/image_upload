@@ -1,0 +1,2 @@
+# image_upload
+if (isset($_FILES['image']['name']) &amp;&amp; $_FILES['image']['error'] == 0) {             $temp_file = $_FILES['image']['tmp_name'];             $img_name = "product" . mt_rand(100, 9999) . time();             $path = $_FILES['image']['name'];             $ext = pathinfo($path, PATHINFO_EXTENSION);             $data['image'] = $img_name . "." . $ext;             $url = PRODUCT . $data['image']; //          echo '&lt;pre>';print_r($url); die();             move_uploaded_file($temp_file, $url);         }
